@@ -1,0 +1,112 @@
+@import nib
+
+$teme-color = #8b9a2f
+$base-color = #f6f3e9
+$border-color = #ddd5c2
+$font-color = #4c4c4c
+
+global-reset()
+/*
+input, select, button, textarea
+    margin 0
+    padding 0 0.25em
+    outline 0
+    reset-font()
+    //border 1px solid black
+    border-radius 0
+    text-decoration none
+    
+    line-height 1
+    -webkit-padding-start 0
+    */
+input, select, button, textarea
+    reset-font()
+    
+button
+    -webkit-appearance none
+    appearance none
+    margin 0
+    padding 0 0.25em
+    outline 0
+    border-radius 0
+    line-height 1
+    
+body
+    box-sizing border-box
+    background-color $base-color
+    
+body, input, select, button, textarea
+    font-family "游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "Osaka", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif
+    font-size 1em //0.814em
+
+    
+// 入力欄
+input[type="text"], input[type="password"], input[type="tel"], textarea
+    border 1px solid #ddd5c2
+    
+    
+// ツールバー
+.toolbar
+    fixed bottom 0 left 0 right 0
+    background-color alpha(green, 0.7)
+    padding 0.5em 0.5em 1em 1em
+    // 両端揃え設定
+    text-align right
+    clearfix()
+    .left
+        float left
+    // ボタン設定
+    button
+        color white
+        border 1px solid white
+        border-radius 5px
+        background-color green
+        padding 0.75em 1em
+        margin-right 0.5em
+        vertical-align middle
+        &:hover
+            color green
+            background-color white
+        &:active
+            color white
+            background-color darken(green, 20%)
+    
+    
+// データボード
+.data-board
+    margin-bottom 1em
+    
+    // ボードタイトル
+    .data-board-title
+        box-sizing border-box
+        width auto
+        padding 0.5em 0.5em
+        border 2px solid $border-color
+        border-top 6px solid $teme-color
+        border-top-left-radius 7px
+        border-top-right-radius 7px
+        border-bottom-width 5px
+        font-size 1.25em
+        color $teme-color
+        background-color #FCFCFC
+        
+    // ボード本体
+    .data-board-body
+        box-sizing border-box
+        width auto
+        padding 1em
+        border-left 2px solid $border-color
+        border-right 2px solid $border-color
+        border-bottom 1px solid $border-color
+        color $font-color
+        background-color white
+        
+        // 最後のみ角丸
+        &:last-child
+            border-bottom-left-radius 6px
+            border-bottom-right-radius 6px
+            border-bottom 2px solid $border-color
+            
+
+
+    

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    main
+    
+        
+    script(src='/javascripts/riot.min.js')
+    script(src='/javascripts/route.min.js')
+    script(src='/javascripts/tag.js')
+    script.
+        riot.mount('*', {route: route});
+        route.start(true);
+        window.route = route;
+        
+        
